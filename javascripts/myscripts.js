@@ -322,7 +322,7 @@ var  myConfigScatterChart = {
 },
   'scale-y': {
     progression: "log",
-    'log-base': 10
+    'log-base': 10,
   },
   'scale-x': {
     progression: "linear",

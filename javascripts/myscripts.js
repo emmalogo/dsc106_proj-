@@ -72,16 +72,6 @@ zingchart.render({
 /*
  * Parse the data and create an area graph with the data.
  */
-
-/* Four variables to store the data*/ 
-var price_per_night_room = [];
-var price_per_night_apartment = [];
-var price_per_night_apartment_normalized = [];
-var price_per_night_room_normalized = [];
-
-/* const to hold room types*/
-const room_type = ['room', 'apartment'];
-
 function parseData(createGraph) {
 	  Papa.parse("data/room_type_price.csv", {
 		download: true,
@@ -92,6 +82,12 @@ function parseData(createGraph) {
 }
 
 function createGraph(data) {
+  /* Four variables to store the data*/ 
+    var price_per_night_room = [];
+    var price_per_night_apartment = [];
+    var price_per_night_apartment_normalized = [];
+    var price_per_night_room_normalized = [];
+
     for (var i = 1; i < data.length; i++) {
           // if the value is not undefined or null, push to array
           if (data[i][1] === 'room') {
@@ -125,12 +121,6 @@ var myConfigdistChart = {
         fontColor: "#8e99a9",
         fontFamily: "Open Sans",
         fontSize: 30
-      },
-      subtitle: {
-        text: "Room vs Apartment",
-        fontColor: "#8e99a9",
-        fontFamily: "Open Sans",
-        fontSize: 20
       },
       plot : {
         "line-width": 2,
@@ -198,12 +188,6 @@ var myConfigdistChart = {
         fontFamily: "Open Sans",
         fontSize: 30
       },
-      subtitle: {
-        text: "Room vs Apartment",
-        fontColor: "#8e99a9",
-        fontFamily: "Open Sans",
-        fontSize: 20
-      },
       plot : {
         "line-width": 2,
         "marker": {
@@ -269,3 +253,116 @@ zingchart.render({
 
 /**creat the graphs */
 parseData(createGraph);
+
+
+
+var price_per_night_room = [];
+var price_per_night_apartment = [];
+var availability_room= [];
+var availability_apartment= [];
+var price_avail_pair_room = [];
+var price_avail_pair_apartment = [];
+
+/*
+ * Parse the scatter data and create an area graph with the data.
+ */
+function parseData(createGraphScatter) {
+  Papa.parse("data/scatter_data.csv", {
+  download: true,
+  complete: function(results) {
+  createGraphScatter(results.data);
+  }
+});
+}
+
+function createGraphScatter(data) {
+  /* Four variables to store the data*/ 
+    
+    for (var i = 1; i < data.length; i++) {
+      var price = Number(data[i][1]);
+      var avail = Number(data[i][0]);
+      var pair = [avail, price];
+        if (data[i][2] === 'room') {
+          price_per_night_room.push(price);
+          availability_room.push(avail);  
+          price_avail_pair_room.push(pair);
+    } else {
+      price_per_night_apartment.push(price);
+          availability_apartment.push(avail);  
+          price_avail_pair_apartment.push(pair);
+    }
+  }
+
+/** Scatter plot */
+var  myConfigScatterChart = {
+  "type": "scatter",
+  title : {
+    text : "Price Per Night vs Availability",
+    fontColor: "#8e99a9",
+    fontFamily: "Open Sans",
+    fontSize: 30
+  },
+  legend: {
+    layout: "2x1",
+    position: "92% 10%",
+    item: {
+        'font-color': "#8e99a9",
+        'font-family': "Open Sans"
+    },
+    'background-color': "white",
+    alpha: 0.5,
+    'border-color': "#8e99a9",
+    shadow: false,
+    marker: {
+        type: "inherit",
+        label: {
+          text: "Projected Income"
+      },
+    }
+},
+  'scale-y': {
+    progression: "log",
+    'log-base': 10
+  },
+  'scale-x': {
+    progression: "linear",
+    label: {
+      text: "Number of days Available"
+  },
+  },
+  "series": [
+    {
+      "values": price_avail_pair_room,
+      "text": "room",
+      marker: {
+        'background-color': '#00bf72',
+        'border-color': "inherit",
+        "alpha-area": ".2",
+        
+      }
+    },
+    {
+      "values": price_avail_pair_apartment,
+      "text": "apartment",
+      marker: {
+        'background-color': '#a8eb12',
+        'border-color': "inherit",
+        "alpha-area": ".2",
+        
+      }
+    }
+	]
+};
+
+zingchart.render({ 
+	id : 'scatterplotChart', 
+	data : myConfigScatterChart, 
+	height: 500, 
+	width: "100%" 
+});
+};
+
+/**creat the graphs */
+parseData(createGraphScatter);
+
+ 

@@ -6,7 +6,7 @@ html,body {
 }
 
 
-#pieChart, #distributionChart {
+#pieChart, #distributionChart, #scatterplotChart {
   width:80%;
   height:80%;
   min-height:100px;

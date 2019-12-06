@@ -6,8 +6,18 @@ html,body {
 }
 
 
-#pieChart, #distributionChart, #scatterplotChart {
+#pieChart, #distributionChart, #scatterplotChart, #stackedbarCahrt {
   width:80%;
   height:80%;
   min-height:100px;
+}
+
+.chart-container {
+  min-height: 150px;
+  width: 100%;
+  height: 100%;
+}
+ 
+.zc-ref {
+  display: none;
 }

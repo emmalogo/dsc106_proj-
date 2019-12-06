@@ -365,4 +365,104 @@ zingchart.render({
 /**creat the graphs */
 parseData(createGraphScatter);
 
+
+var stackedchartConfig = {
+  type: 'hbar',
+  backgroundColor: '#2A2B3A',
+  plot: {
+    tooltip: {
+      borderRadius: '2px',
+      borderWidth: '0px'
+    },
+    valueBox: {
+      text: '%v',
+      fontColor: '#2A2B3A',
+      fontSize: '14px',
+      visible: true
+    },
+    animation: {
+      effect: 'ANIMATION_EXPAND_TOP',
+      method: 'ANIMATION_BOUNCE_EASE_OUT',
+      sequence: 'ANIMATION_BY_PLOT_AND_NODE'
+    },
+    barsSpaceRight: '20px',
+    barsSpaceLeft: '20px',
+    stacked: true
+  },
+  plotarea: {
+    marginTop: '30px',
+    marginBottom: '30px',
+    marginLeft: '80px'
+  },
+  scaleX: {
+    item: {
+      fontColor: '#e8e8e8',
+      fontSize: '16px'
+    },
+    labels: ['Top500', 'Mid500', 'Bot500'],
+    lineColor: 'transparent',
+    tick: {
+      visible: false
+    }
+  },
+  scaleY: {
+    guide: {
+      visible: false
+    },
+    lineColor: 'transparent',
+    tick: {
+      visible: false
+    },
+    visible: false
+  },
+  tooltip: {
+    visible: false
+  },
+  series: [
+    {
+      values: [2892, 2634, 638],
+      backgroundColor: '#E71D36',
+      borderRadius: '50px 0px 0px 50px',
+      rules: [
+        {
+          backgroundColor: '#E71D36',
+          rule: '%i === 0'
+        },
+        {
+          backgroundColor: '#2EC4B6',
+          rule: '%i === 1'
+        },
+        {
+          backgroundColor: '#FF9F1C',
+          rule: '%i === 2'
+        }
+      ]
+    },
+    {
+      values: [108, 366, 2362],
+      backgroundColor: '#E71D36',
+      borderRadius: '0px 50px 50px 0px',
+      rules: [
+        {
+          backgroundColor: '#e85d6f',
+          rule: '%i === 0'
+        },
+        {
+          backgroundColor: '#90eae2',
+          rule: '%i === 1'
+        },
+        {
+          backgroundColor: '#f7be70',
+          rule: '%i === 2'
+        }
+      ]
+    }
+  ]
+};
+ 
+zingchart.render({
+  id: 'stackedbarCahrt',
+  data: stackedchartConfig
+});
+
  

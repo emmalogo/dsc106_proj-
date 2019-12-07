@@ -385,9 +385,30 @@ var stackedchartConfig = {
       method: 'ANIMATION_BOUNCE_EASE_OUT',
       sequence: 'ANIMATION_BY_PLOT_AND_NODE'
     },
+    'legend-item': {
+      'font-family': "Open Sans"
+    },
     barsSpaceRight: '20px',
     barsSpaceLeft: '20px',
     stacked: true
+  },
+  // title : {
+  //   text : "No. of Apartments vs No. of Rooms",
+  //   fontColor: "#8e99a9",
+  //   fontFamily: "Open Sans",
+  //   fontSize: 30,
+  //   width: 150,
+  //   height: 30,
+  //   'border-radius': "20px",
+  // },
+  legend: {
+    layout: "2x1",
+    x: "92%",
+    y: "10%",
+    'background-color': "white",
+    alpha: 0.3,
+    'border-color': "#8e99a9",
+    shadow: false,
   },
   plotarea: {
     marginTop: '30px',
@@ -399,7 +420,7 @@ var stackedchartConfig = {
       fontColor: '#e8e8e8',
       fontSize: '16px'
     },
-    labels: ['Top500', 'Mid500', 'Bot500'],
+    labels: ['4thQ', '3rdQ', '2ndQ', '1stQ'],
     lineColor: 'transparent',
     tick: {
       visible: false
@@ -420,41 +441,51 @@ var stackedchartConfig = {
   },
   series: [
     {
-      values: [2892, 2634, 638],
-      backgroundColor: '#E71D36',
+      values: [3180, 3004, 2418,813],
+      "text": "apartment",
+      backgroundColor: '#008793',
       borderRadius: '50px 0px 0px 50px',
       rules: [
         {
-          backgroundColor: '#E71D36',
+          backgroundColor: '#008793',
           rule: '%i === 0'
         },
         {
-          backgroundColor: '#2EC4B6',
+          backgroundColor: '#008793',
           rule: '%i === 1'
         },
         {
-          backgroundColor: '#FF9F1C',
+          backgroundColor: '#008793',
           rule: '%i === 2'
-        }
+        },
+        {
+          backgroundColor: '#008793',
+          rule: '%i === 3'
+        },
       ]
     },
     {
-      values: [108, 366, 2362],
-      backgroundColor: '#E71D36',
+      values: [129, 305, 891,2469],
+      "text": "room",
+      backgroundColor: '#00bf72',
       borderRadius: '0px 50px 50px 0px',
       rules: [
         {
-          backgroundColor: '#e85d6f',
+          backgroundColor: '#00bf72',
           rule: '%i === 0'
         },
         {
-          backgroundColor: '#90eae2',
+          backgroundColor: '#00bf72',
           rule: '%i === 1'
         },
         {
-          backgroundColor: '#f7be70',
+          backgroundColor: '#00bf72',
           rule: '%i === 2'
-        }
+        },
+        {
+          backgroundColor: '#00bf72',
+          rule: '%i === 3'
+        },
       ]
     }
   ]

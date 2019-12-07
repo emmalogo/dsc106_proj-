@@ -58,6 +58,7 @@
       </div>
 
       <!-- Sidebar on small screens when clicking the menu icon -->
+<<<<<<< HEAD
         <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
                 <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
                 <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
@@ -66,22 +67,25 @@
                 <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">Distribution</a>
                 <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Pricing</a>
         </nav>
+=======
+
+>>>>>>> c555f33df032c51a339f54221d43fab1e9b3b1f7
 
       <!-- Header with full-height image -->
+      
         <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
                 <div class="w3-display-left w3-text-white" style="padding:48px">
                 <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
                 <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+<<<<<<< HEAD
                 <span class="w3-large">Learn how to make profit from AirBnb</span>
                 <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+=======
+                <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+                
+>>>>>>> c555f33df032c51a339f54221d43fab1e9b3b1f7
                 </div> 
-                <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
+
                 </div>
       </header>
       
@@ -103,7 +107,12 @@
                 <div class="w3-quarter">
                     <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
                     <p class="w3-large">Design</p>
+<<<<<<< HEAD
                     <p>We beelive interactive charts can help users to better understand the data.</p>
+=======
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+>>>>>>> c555f33df032c51a339f54221d43fab1e9b3b1f7
                 </div>
                 <div class="w3-quarter">
                     <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
@@ -111,8 +120,9 @@
                     <p>The whole data set comes from AirBnb official database.</p>
                 </div>
                 </div>
-      </div>
+     </div>
       
+<<<<<<< HEAD
         <p id = "listing-head"> More Listings = More $$$</p>
 
         <div id='pieChart'></div>
@@ -141,125 +151,140 @@
 
 
         <div id='my-map'></div>
+=======
+     <div class="w3-container"  id='pieChart'> 
+
+                <div class="w3-container"> 
+                        
+    
+                    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+                </div>
+
+     </div>   
+    
+    <div class="w3-container" style="padding:128px 16px" id='my-map' >
+
+>>>>>>> c555f33df032c51a339f54221d43fab1e9b3b1f7
         <script>
         function getColor(d) {
 
 
-return d > 1000 ? '#800026' :
-       d > 350  ? '#BD0026' :
-       d > 200  ? '#E31A1C' :
-       d > 120  ? '#FC4E2A' :
-       d > 80  ? '#FD8D3C' :
-       d > 50   ? '#FEB24C' :
-       d > 20   ? '#FED976' :
-                  '#FFEDA0';
-}
-function style(feature) {
-return {
-    fillColor: getColor(feature.properties['median price']),
-    weight: 1,
-    opacity: 1,
-    color: 'white',
-    dashArray: '3',
-    fillOpacity: 0.7
-};
-}
+            return d > 1000 ? '#800026' :
+                d > 350  ? '#BD0026' :
+                d > 200  ? '#E31A1C' :
+                d > 120  ? '#FC4E2A' :
+                d > 80  ? '#FD8D3C' :
+                d > 50   ? '#FEB24C' :
+                d > 20   ? '#FED976' :
+                            '#FFEDA0';
+            }
+            function style(feature) {
+            return {
+                fillColor: getColor(feature.properties['median price']),
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+            }
 
-var nbh = $.ajax({
-        url: "https://raw.githubusercontent.com/emmalogo/dsc106_proj-/master/data/median_nbh.geojson",
-        dataType: "json",
-        success: console.log("median data successfully loaded."),
-        error: function(xhr) {
-            alert(xhr.statusText)
-        }
-    })
-    $.when(nbh).done(function() {
-        var map = L.map('my-map')
-            .setView([32.828, -117.2], 11);
+            var nbh = $.ajax({
+                    url: "https://raw.githubusercontent.com/emmalogo/dsc106_proj-/master/data/median_nbh.geojson",
+                    dataType: "json",
+                    success: console.log("median data successfully loaded."),
+                    error: function(xhr) {
+                        alert(xhr.statusText)
+                    }
+                })
+                $.when(nbh).done(function() {
+                    var map = L.map('my-map')
+                        .setView([32.828, -117.2], 11);
 
-var base = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-maxZoom: 18,
-id: 'mapbox/streets-v11',
-accessToken: 'pk.eyJ1IjoiYnViYmxpZXMiLCJhIjoiY2szdWpjc2R3MDh4NjNrbXl5cGxsYWYxdSJ9.q3uGEb7lz9WRoSNoYdi9ZA'
-}).addTo(map); 
+            var base = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            accessToken: 'pk.eyJ1IjoiYnViYmxpZXMiLCJhIjoiY2szdWpjc2R3MDh4NjNrbXl5cGxsYWYxdSJ9.q3uGEb7lz9WRoSNoYdi9ZA'
+            }).addTo(map); 
 
-var info = L.control();
+            var info = L.control();
 
-info.onAdd = function (map) {
-this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-this.update();
-return this._div;
-};
-
-
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-this._div.innerHTML = '<h4>Neighbourhood AirBnb Median Income</h4>' +  (props ?
-    '<b>' + props.neighbourhood + '</b><br />' +'$' +props['median price'] + ' <sup></sup>'
-    : '');
-};
-
-info.addTo(map);
+            info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+            this.update();
+            return this._div;
+            };
 
 
-function highlightFeature(e) {
-var layer = e.target;
+            // method that we will use to update the control based on feature properties passed
+            info.update = function (props) {
+            this._div.innerHTML = '<h4>Neighbourhood AirBnb Median Income</h4>' +  (props ?
+                '<b>' + props.neighbourhood + '</b><br />' +'$' +props['median price'] + ' <sup></sup>'
+                : '');
+            };
 
-layer.setStyle({
-    weight: 2,
-    color: '#666',
-    dashArray: '',
-    fillOpacity: 0.7
-});
+            info.addTo(map);
 
-if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-    layer.bringToFront();
-}
-info.update(layer.feature.properties);
-}
-function resetHighlight(e) {
-geoJson.resetStyle(e.target);
-info.update(); 
-}
 
-function zoomToFeature(e) {
-map.fitBounds(e.target.getBounds());
-}
-function onEachFeature(feature, layer) {
-layer.on({
-    mouseover: highlightFeature,
-    mouseout: resetHighlight,
-    click: zoomToFeature
-});
-}
+            function highlightFeature(e) {
+            var layer = e.target;
 
-geoJson = L.geoJson(nbh.responseJSON, 
-{style: style,
-onEachFeature: onEachFeature }).addTo(map);
+            layer.setStyle({
+                weight: 2,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
 
-var legend = L.control({position: 'bottomright'});
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+            info.update(layer.feature.properties);
+            }
+            function resetHighlight(e) {
+            geoJson.resetStyle(e.target);
+            info.update(); 
+            }
 
-legend.onAdd = function (map) {
+            function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+            }
+            function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+            }
 
-var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 20, 50, 80, 120, 200, 350, 1000],
-    labels = [];
+            geoJson = L.geoJson(nbh.responseJSON, 
+            {style: style,
+            onEachFeature: onEachFeature }).addTo(map);
 
-// loop through our density intervals and generate a label with a colored square for each interval
-for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +=
-        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-}
+            var legend = L.control({position: 'bottomright'});
 
-return div;
-};
+            legend.onAdd = function (map) {
 
-legend.addTo(map);
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 20, 50, 80, 120, 200, 350, 1000],
+                labels = [];
 
-}); 
+            // loop through our density intervals and generate a label with a colored square for each interval
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            }
+
+            return div;
+            };
+
+            legend.addTo(map);
+
+            }); 
         </script>
+    </div> 
       
         <div id='distributionChart'></div>
         

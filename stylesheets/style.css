@@ -5,7 +5,20 @@ body, html {
   line-height: 1.8;
 }
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: 'Times New Roman', Times, serif,
+}
+
+p { 
+  font-family: Arial;
+  font-size: 15px;
+}
+
+#listing-head {
+  font-size: 100px;
+  text-align: center;
+}
+
 /* Full height image header */
  .bgimg-1 {
                  background-position: center;

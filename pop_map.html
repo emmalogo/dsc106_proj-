@@ -1,5 +1,6 @@
  <!DOCTYPE html>
 <head> 
+    <link rel=stylesheet href=info.css>
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
@@ -11,11 +12,16 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+#my-map {
+	width:960px;
+	height:500px;
+}
+
+</style>
 </head>
 <body> 
 		<div id='my-map'></div>
-<<<<<<< HEAD
-=======
   <script>
 
   function getColor(d) {
@@ -34,7 +40,7 @@
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties['median price']),
+        fillColor: getColor(feature.properties['count']),
         weight: 1,
         opacity: 1,
         color: 'white',
@@ -55,7 +61,7 @@ function style(feature) {
         var nbh = $.ajax({
             url: "https://raw.githubusercontent.com/emmalogo/dsc106_proj-/master/data/median_nbh_final.geojson",
             dataType: "json",
-            success: console.log("median data successfully loaded."),
+            success: console.log("count data successfully loaded."),
             error: function(xhr) {
                 alert(xhr.statusText)
             }
@@ -82,8 +88,9 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>Neighbourhood AirBnb Median Income</h4>' +  (props ?
-        '<b>' + props.neighbourhood + '</b><br />' +'$' +props['median price'] + ' <sup></sup>'
+    console.log(props)
+    this._div.innerHTML = '<h4>Neighbourhood AirBnb Number of Listings</h4>' +  (props ?
+        '<b>' + props.neighbourhood + '</b><br />'  +props['count'] + ' <sup></sup>'
         : '');
 };
 
@@ -171,7 +178,6 @@ legend.addTo(map);
 
 
 </script>
->>>>>>> 2e65c006f32500bb8ec190a05a8307797d680d45
 </body>
 
 </html>

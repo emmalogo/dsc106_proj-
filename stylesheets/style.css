@@ -19,17 +19,22 @@ p {
   text-align: center;
 }
 
+#sub-head {
+  font-size: 60px;
+  text-align: center;
+}
+
 /* Full height image header */
  .bgimg-1 {
-                 background-position: center;
-              background-size: cover;
-              background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80');
-              min-height: 100%;
-            }
-            
-            .w3-bar .w3-button {
-              padding: 16px;
-            }
+    background-position: center;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80');
+    min-height: 100%;
+ }
+ 
+.w3-bar .w3-button {
+    padding: 16px;
+}
 
 .pie-container {
   min-height: 150px;
@@ -37,6 +42,9 @@ p {
   left: 400px;
 }
 
+.alerting_message {
+  text-shadow: 3px 3px #A9A9A9;
+}
 
 #pieChart, #distributionChart, #scatterplotChart, #stackedbarCahrt, #my-map {
   widows: 80%;
@@ -45,21 +53,12 @@ p {
   position: relative;
 }
 
-/* #my-map {
-	width:960px;
-	height:500px;
-} */
-
 .chart-container {
   min-height: 150px;
   width: 80%;
   height: 80%;
 }
  
-.zc-ref {
-  display: none;
-}
-
 .info {
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
@@ -82,4 +81,22 @@ p {
   float: left;
   margin-right: 8px;
   opacity: 0.7;
+}
+
+.monopoly {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:30px;
+  margin-bottom:30px; 
+  height: 350px;
+}
+
+.monopoly_larger {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom:100px; 
+  height: 450px;
 }

@@ -6,7 +6,6 @@ function onClick(element) {
     captionText.innerHTML = element.alt;
 }
 
-
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 
@@ -31,11 +30,9 @@ var myConfigPieChart = {
  	  borderWidth: 5,
  	  valueBox: {
  	    placement: 'in',
- 	    text: '%t\n%npv%',
-        'fontFamily': "Open Sans",
-        'font-size': 16,
-        'font-weight': "bold",
-        'font-style': "normal",
+      'fontFamily': "Open Sans",
+      'font-size': 16,
+      'font-style': "normal",
  	  },
  	  tooltip:{
  	    fontSize: '25',
@@ -163,6 +160,20 @@ var myConfigdistChart = {
       x: "82%",
       y: "25%",
     },
+    'scale-y': {
+      label: {
+        text: "Count",
+        fontFamily: "Open Sans",
+        fontSize: 15
+    }
+    },
+    'scale-x': {
+      label: {
+        text: "Price per Night",
+        fontFamily: "Open Sans",
+        fontSize: 15
+    }
+  },
       series: [
         {
           values: [2, 79, 1895, 2243, 1601,838, 721, 411, 359, 221, 268, 122, 149, 53, 101, 54,68,32,58,38],
@@ -209,7 +220,7 @@ var myConfigdistChart = {
       {
     type: "area", 
       title : {
-        text : "Distribution of Normalized Price Per Night",
+        text : "Distribution of Standerdized Price Per Night",
         fontColor: "#8e99a9",
         fontFamily: "Open Sans",
         fontSize: 30
@@ -229,9 +240,23 @@ var myConfigdistChart = {
       x: "82%",
       y: "25%",
     },
+    'scale-y': {
+      label :{
+        text : "Count",
+        fontFamily: "Open Sans",
+        fontSize: 15
+      }
+    },
+    'scale-x': {
+      label: {
+        text: "Standerdized Price per Night",
+        fontFamily: "Open Sans",
+        fontSize: 15
+      }
+    },
       series: [
         {
-          values: [25, 2452, 2889,1410, 1014, 433, 420,158,166,118,104,46,70,0,0,0,0,0],
+          values: [2, 611, 622, 3622, 1769, 1052, 796, 394, 405, 154, 168, 111, 106, 37, 79, 0],
           "background-color": "#008793",
           "alpha-area": ".6",
           "font-family": "Open Sans",
@@ -241,7 +266,7 @@ var myConfigdistChart = {
           "aspect": "spline",
         },
         {
-          values: [0,0,571, 2154,486,177,95,48,28,13,4,19,5,4,2,1,0,0],
+          values: [0, 2349, 955, 157, 68, 30, 16, 21, 5, 5, 2, 2, 0, 2],
           "background-color": "#00bf72",
           "alpha-area": ".6",
           "font-family": "Open Sans",
@@ -383,7 +408,6 @@ var  myConfigScatterChart = {
 zingchart.render({ 
 	id : 'scatterplotChart', 
 	data : myConfigScatterChart, 
-	height: 500, 
 	width: "100%" 
 });
 };
@@ -446,7 +470,7 @@ var stackedchartConfig = {
       fontColor: '#e8e8e8',
       fontSize: '16px'
     },
-    labels: ['4thQ', '3rdQ', '2ndQ', '1stQ'],
+    labels: ['1stQ', '2ndQ', '3rdQ', '4thQ'],
     lineColor: 'transparent',
     tick: {
       visible: false

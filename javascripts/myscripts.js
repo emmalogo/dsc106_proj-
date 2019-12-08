@@ -442,15 +442,6 @@ var stackedchartConfig = {
     barsSpaceLeft: '20px',
     stacked: true
   },
-  // title : {
-  //   text : "No. of Apartments vs No. of Rooms",
-  //   fontColor: "#8e99a9",
-  //   fontFamily: "Open Sans",
-  //   fontSize: 30,
-  //   width: 150,
-  //   height: 30,
-  //   'border-radius': "20px",
-  // },
   legend: {
     layout: "2x1",
     x: "92%",

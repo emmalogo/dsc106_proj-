@@ -31,7 +31,7 @@ p {
     background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80');
     min-height: 100%;
  }
- 
+
 .w3-bar .w3-button {
     padding: 16px;
 }
@@ -46,11 +46,20 @@ p {
   text-shadow: 3px 3px #A9A9A9;
 }
 
-#pieChart, #distributionChart, #scatterplotChart, #stackedbarCahrt, #my-map {
+#pieChart, #distributionChart, #scatterplotChart, #stackedbarCahrt {
   widows: 80%;
   height: 80%;
   min-height: 100px;
   position: relative;
+}
+
+#my-map {
+   height: 800px;
+   width: 80%;
+   position: relative;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .chart-container {
